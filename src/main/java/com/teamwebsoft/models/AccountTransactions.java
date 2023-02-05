@@ -24,6 +24,9 @@ public class AccountTransactions {
     @Column(name = "transaction_id")
     private String transactionId;
 
+    @Column(name = "account_number")
+    private long accountNumber;
+
     @Column(name = "customer_id")
     private long customerId;
 

@@ -25,6 +25,9 @@ public class Cards {
     @Column(name = "card_number")
     private String cardNumber;
 
+    @Column(name = "customer_id")
+    private String customerId;
+
     @Column(name = "card_type")
     private String cardType;
 
