@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/eazybank
+    username: root
+    password: farid@1510
+  jpa:
+    show-sql: true
