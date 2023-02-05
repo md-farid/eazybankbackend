@@ -1,6 +1,5 @@
 package com.teamwebsoft.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,28 +10,32 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Date;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "cards")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Cards {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @Column(name = "card_id")
+    private long cardId;
 
-    private String name;
+    @Column(name = "card_number")
+    private String cardNumber;
 
-    private String email;
+    @Column(name = "card_type")
+    private String cardType;
 
-    @Column(name = "mobile_number")
-    private String mobileNumber;
+    @Column(name = "total_limit")
+    private int totalLimit;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String pwd;
+    @Column(name = "amount_used")
+    private int amountUsed;
 
-    private String role;
+    @Column(name = "available_amount")
+    private int availableAmount;
 
     @Column(name = "created_at", updatable = false)
     @CreationTimestamp
