@@ -3,6 +3,7 @@ package com.teamwebsoft.controllers;
 import com.teamwebsoft.models.Contact;
 import com.teamwebsoft.repositories.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
 
+    @PostMapping("/contact")
     public Contact saveContactInquiryDetails(@RequestBody Contact contact){
         contact.setContactId(getServiceReqNumber());
         contact.setCreatedAt(new Date(System.currentTimeMillis()));
