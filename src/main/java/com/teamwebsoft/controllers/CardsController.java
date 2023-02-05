@@ -3,6 +3,7 @@ package com.teamwebsoft.controllers;
 import com.teamwebsoft.models.Cards;
 import com.teamwebsoft.repositories.CardsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ public class CardsController {
     @Autowired
     private CardsRepository cardsRepository;
 
+    @GetMapping("/myCards")
     public List<Cards> getCardsDetails(@RequestParam long id){
         List<Cards> cards = cardsRepository.findByCustomerId(id);
         if(cards != null){
